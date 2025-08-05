@@ -1,10 +1,10 @@
 # Discord Password Changer
 
-This Python script automates the process of changing Discord account passwords using user tokens.
+A multithreaded Python script to change passwords for Discord accounts using user tokens.
 
 > ⚠️ **Disclaimer**  
 > This tool is for educational and research purposes only.  
-> Misuse of this script for unauthorized access or any malicious activity is strictly prohibited.
+> Misuse of this script for unauthorized access or malicious activity is strictly prohibited.
 
 ---
 
@@ -15,7 +15,7 @@ This Python script automates the process of changing Discord account passwords u
 | `main.py`          | Main script to execute the password changer. |
 | `tokens.txt`       | List of Discord user tokens.                 |
 | `changedtoken.txt` | Stores tokens after a successful change.     |
-| `config.json`      | Contains the old and new passwords.          |
+| `config.json`      | Configuration file (proxy, threads, password). |
 | `requirements.txt` | Python dependencies file.                    |
 
 ---
@@ -40,17 +40,22 @@ cd discord-password-changer
 
 ```bash
 pip install -r requirements.txt
-
 ```
-3. Add your tokens to `tokens.txt` in the format:
-        
-```bash
+
+3. Fill in `config.json` with your settings.
+
+> **Proxy (optional): use if needed, leave blank if not.**
+
+4. Add your tokens to `tokens.txt` in the format:
+```
 email:old_password:token
 ```
 
+---
+
 ## 🚀 Usage
 
-4. Run the script:
+Run the script:
 
 ```bash
 python main.py
@@ -60,7 +65,6 @@ The script will process each token, attempt to change the password, and save suc
 
 ---
 
-## 📄 License
+## 🙋 Author
 
-This project is open-source and provided for educational purposes only.  
-Using it on unauthorized accounts is strictly prohibited.
+Made with ❤️ by ali-7hh
