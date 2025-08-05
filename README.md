@@ -46,11 +46,11 @@ pip install -r requirements.txt
         
 ```bash
 email:old_password:token
----
+```
 
 ## 🚀 Usage
 
-Run the script:
+4. Run the script:
 
 ```bash
 python main.py
