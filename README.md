@@ -67,4 +67,4 @@ The script will process each token, attempt to change the password, and save suc
 
 ## 🙋 Author
 
-Made with ❤️ by ali-7hh
+Made by ali-7hh
