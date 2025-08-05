@@ -14,7 +14,7 @@ def remove_from_file(filename: str, target_email: str):
         with open(filename, 'w') as file:
             file.writelines(lines)
 def main(tokens):
-    global succses, error
+    global success, error
 
     password = tokens.split(':')[1]
     token = tokens.split(':')[2]
@@ -46,13 +46,13 @@ def main(tokens):
     try:
         response = session.patch(url, headers=headers, json=data, proxy=proxy)
         if response.status_code == 200:
-            succses += 1
+            success += 1
             new_token = response.json().get("token")
             if new_token:
                 with open("changedtoken.txt", "a") as file:
                     file.write(f"{email}:{new_password}:{new_token}\n")
                 remove_from_file("tokens.txt", tokens)
-                print(f"{Fore.GREEN}[{succses}] {email}:{new_password}:{new_token}")
+                print(f"{Fore.GREEN}[{success}] {email}:{new_password}:{new_token}")
         else:
             error += 1
             print(f"{Fore.RED}[{error}] Error for {token} → {response.text}")
@@ -70,9 +70,7 @@ logo = r"""
  \▓▓▓▓▓▓▓▓ \▓▓▓▓▓▓▓    \▓       \▓▓    \▓▓▓▓▓▓  \▓▓▓▓▓▓ \▓▓\▓▓▓▓▓▓▓ 
 """
 
-credits = """
-Created By ==> Rafa7awy ===> Discord user  ==> ii.y - levcqh
-"""
+credits = "Created by Rafa7awy | Discord: ii.y"
 if __name__ == "__main__":
     print(Fore.CYAN + logo)
     print(Fore.YELLOW + credits)
@@ -81,9 +79,8 @@ if __name__ == "__main__":
     proxy = {"https": config["proxy"], "http": config["proxy"]} if config["proxy"] else None
     Threads = config["Threads"]
     new_password = config["new_password"]
-
     session = tls_client.Session(client_identifier="chrome_138",random_tls_extension_order=True)
-    succses = 0
+    success = 0
     error = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=Threads) as executor:
         with open("tokens.txt", "r") as f:
