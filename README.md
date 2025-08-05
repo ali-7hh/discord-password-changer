@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 4. Add your tokens to `tokens.txt` in the format:
 ```
-email:old_password:token
+email:password:token
 ```
 
 ---
