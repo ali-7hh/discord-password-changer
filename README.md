@@ -30,7 +30,10 @@ This Python script automates the process of changing Discord account passwords u
 ## 📦 Installation
 
 1. Clone the repository:
+2. Install the dependencies:
 
+```bash
+pip install -r requirements.txt
 ```bash
 git clone https://github.com/ali-7hh/discord-password-changer.git
 cd discord-password-changer
