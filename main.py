@@ -59,8 +59,9 @@ logo = r"""
 """
 
 credits = """
-Created By ==> Rafa7awy |  Edited By ==> levcqh
-Discord    ==> ii.y - levcqh
+Created By ==> Rafa7awy
+Edited By ==> levcqh
+Discord user  ==> ii.y - levcqh
 """
 if __name__ == "__main__":
     print(Fore.CYAN + logo)
